@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_e_commerce/utils/colors.dart';
+import 'package:food_e_commerce/widgets/big_text.dart';
+import 'package:food_e_commerce/widgets/food_page_body.dart';
+import 'package:food_e_commerce/widgets/small_text.dart';
 
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({Key? key}) : super(key: key);
@@ -22,9 +25,21 @@ class _MainFoodPageState extends State<MainFoodPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
-                  children: const [
-                    Text("País"),
-                    Text("Cidade"),
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    BigTextWidget(
+                      text: "Brasil",
+                      color: AppCores.princCor,
+                    ),
+                    Row(
+                      children: [
+                        SmallTextWidget(
+                          text: "Timbaúba",
+                          color: AppCores.textoCor,
+                        ),
+                        const Icon(Icons.arrow_drop_down_rounded)
+                      ],
+                    ),
                   ],
                 ),
                 Center(
@@ -45,6 +60,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
             ),
           ),
         ),
+        FoodPageBodyWidget()
       ],
     ));
   }
